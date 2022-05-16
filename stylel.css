@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+:root {
+  --main-color: #bbddf1;
+  --border-color: #3a8ab8;
+  --control-color: #2681a5;
+  --active-color: #143849;
+}
+
+body {
+  margin: 0%;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--main-color);
+  color: var(--border-color);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+.slider {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 0rem 1fr 6rem;
+  grid-row-gap: 1rem;
+  width: 50rem;
+}
+
+.radio {
+  width: 0%;
+  height: 0%;
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+/* Images */
+
+.slider_images {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.image-first,
+.title-first,
+.image-two,
+.title-two,
+.image-three,
+.title-three,
+.image-four,
+.title-four,
+.image-five,
+.title-five {
+  transform: translateX(101%);
+}
+
+.radio.radio-first:checked ~ .slider_images .image-first {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-two:checked ~ .slider_images .image-two {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-three:checked ~ .slider_images .image-three {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-four:checked ~ .slider_images .image-four {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-five:checked ~ .slider_images .image-five {
+  animation: fade 1s forwards;
+}
+
+/* Titles */
+
+.slider_titles {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  margin-right: 1rem;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-size: 2.5rem;
+}
+
+.radio.radio-first:checked ~ .slider_titles .title-first {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-two:checked ~ .slider_titles .title-two {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-three:checked ~ .slider_titles .title-three {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-four:checked ~ .slider_titles .title-four {
+  animation: fade 1s forwards;
+}
+
+.radio.radio-five:checked ~ .slider_titles .title-five {
+  animation: fade 1s forwards;
+}
+
+/* Controls */
+
+.slider_controls {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.control {
+  display: block;
+}
+
+.control-first,
+.control-two,
+.control-three,
+.control-four,
+.control-five {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: var(--control-color);
+  border: 0.18rem solid var(--control-color);
+}
+
+.radio.radio-first:checked ~ .slider_controls .control-first {
+  background-color: var(--main-color);
+  border-color: (--control-color);
+}
+
+.radio.radio-two:checked ~ .slider_controls .control-two {
+  background-color: var(--main-color);
+  border-color: (--control-color);
+}
+
+.radio.radio-three:checked ~ .slider_controls .control-three {
+  background-color: var(--main-color);
+  border-color: (--control-color);
+}
+
+.radio.radio-four:checked ~ .slider_controls .control-four {
+  background-color: var(--main-color);
+  border-color: (--control-color);
+}
+
+.radio.radio-five:checked ~ .slider_controls .control-five {
+  background-color: var(--main-color);
+  border-color: (--control-color);
+}
+
+.radio.radio-first:checked ~ .slider_controls .control-first:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-color: (--border-color);
+}
+
+.radio.radio-two:checked ~ .slider_controls .control-two:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-color: (--border-color);
+}
+
+.radio.radio-three:checked ~ .slider_controls .control-three:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-color: (--border-color);
+}
+
+.radio.radio-four:checked ~ .slider_controls .control-four:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-color: (--border-color);
+}
+
+.radio.radio-five:checked ~ .slider_controls .control-five:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-color: (--border-color);
+}
+
+.control:hover {
+  cursor: pointer;
+}
+
+.control:hover .control-first,
+.control:hover .control-two,
+.control:hover .control-three,
+.control:hover .control-four,
+.control:hover .control-five {
+  background-color: var(--border-color);
+  border-color: var(--border-color);
+}
+
+.control:active {
+  cursor: pointer;
+}
+
+.control:active .control-first,
+.control:active .control-two,
+.control:active .control-three,
+.control:active .control-four,
+.control:active .control-five {
+  background-color: var(--active-color);
+  border-color: var(--active-color);
+}
+
+/* Animation */
+
+@keyframes fade {
+  0% {
+    transform: translateX(101%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+  .slider {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0rem 1fr 2rem 2rem;
+  }
+
+  .slider_images {
+    grid-column: 1 / 2;
+  }
+
+  .slider_titles {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    align-items: start;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .slider_controls {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    justify-content: center;
+  }
+
+  .control-first,
+  .control-two,
+  .control-three,
+  .control-four,
+  .control-five {
+    width: 1rem;
+    height: 1rem;
+    border: 0.15rem solid var(--control-color);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .wrapper {
+    margin: 0 1rem;
+  }
+
+  .slider {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0rem 1fr 1rem 2rem;
+    grid-row-gap: 0.5rem;
+  }
+
+  .control-first,
+  .control-two,
+  .control-three,
+  .control-four,
+  .control-five {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0.05rem solid var(--control-color);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
